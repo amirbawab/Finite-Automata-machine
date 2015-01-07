@@ -15,12 +15,17 @@ Finite Automata Machine
 | getTransitions() | Array of transitions | Get all transitions in the finite automata machine | O(\|T\|) |
 | getInitialState() | State | Get the initial state in the finite automata machine | O(1) |
 | process(string) | Boolean: True if accepted, False if rejected | Process a string with the finite automata machine | O(\|Γ\|.Moves) <br>Γ*: Tape alphabet* |
-| isDFA(alphabet) | Boolean | Checks if a machine is deterministic | O(\|S\|.\|Γ\|+\|T\|.\|Γ\|) |
+| isDFA(alphabet)<sup>1</sup> | Boolean | Checks if a machine is deterministic | O(\|S\|.\|Γ\|+\|T\|.\|Γ\|) |
 | chooseInitialState(state) | void | Choose the initial state for the finite automata machine | O(1) |
 | addFinalState(state) | void | Make a state as final | O(1) |
 | removeFinalState(state) | void | Remove the final status for a final state | O(1) |
 | getProcessTransitions() | Array of transitions | Get the transitions for accepting a string | O(1) |
 | export(filename) | void | Export finite automata machine to a text file readable by the Finite automata machine parser | O(\|S\|+\|T\|log \|S\|) |
+
+*isDFA(alphabet)<sup>1</sup>*:
+Checks if a Finite automata is Deterministic:
+- No lambda transition is allowed.
+- Every state must have exactly one transition for each character in the alphabet.
 
 ####Populate your Finite automata machine
 
